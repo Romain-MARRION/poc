@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <html lang="en-us">
+    <head>
+      <meta charset="utf-8">
+      <title>Python form submission example</title>
+      <style>
+        form {
+          width: 420px;
+        }
+
+        div {
+          margin-bottom: 20px;
+        }
+
+        label {
+          display: inline-block;
+          width: 240px;
+          text-align: right;
+          padding-right: 10px;
+        }
+
+        button, input {
+          float: right;
+        }
+      </style>
+    </head>
+    <body>
+      <form method="post" action="{{ url_for('hello') }}">
+        <div>
+          <label for="text">What sentence do you want me to predict the tag(s)?</label>
+          <input name="text" id="text">
+        </div>
+        <div>
+          <label for="top_k">How many tags do you want?</label>
+          <input name="top_k" id="top_k" value=5>
+        </div>
+        <div>
+          <button>predict</button>
+        </div>
+      </form>
+    </body>
+  </html>
